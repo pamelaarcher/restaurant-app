@@ -1,0 +1,25 @@
+/* /context/AppContext.js */
+
+import React, {createContext, useState} from "react";
+// create auth context with default value
+
+// set backup default for isAuthenticated if none is provided in Provider
+export const AppContext = createContext(
+    {isAuthenticated:false, 
+        cart: {items:[], 
+        total:0},
+        addItem:()=>{},
+        removeItem:()=>{},
+        user: null, 
+        setUser:()=>{}
+    });
+
+export function Context({ children }) {
+        const [state, setState] = useState();
+      
+        return (
+          <AppContext.Provider value={{ message, setMessage }}>
+            {children}
+          </AppContext.Provider>
+        );
+      }

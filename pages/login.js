@@ -38,7 +38,7 @@ function Login(props) {
         <Col sm="12" md={{ size: 5, offset: 3 }}>
           <div className="paper">
             <div className="header">
-              <img src="http://localhost:1337/uploads/5a60a9d26a764e7cba1099d8b157b5e9.png" />
+              <img src="http://localhost:1337/uploads/48f9b5304bed46bf9210e82021dc68a1.png" />
             </div>
             <section className="wrapper">
               {Object.entries(error).length !== 0 &&
@@ -90,7 +90,9 @@ function Login(props) {
                           .then((res) => {
                             setLoading(false);
                             // set authed User in global context to update header/app state
-                            appContext.setUser(res.data.user);
+                            // appContext.user = res.data.user;
+                            // appContext.isAuthenticated = true;
+                            appContext.setUser(res.data.user, true);
                           })
                           .catch((error) => {
                             //setError(error.response.data);

@@ -9,6 +9,9 @@ import AppContext from "./context";
 const Layout = (props) => {
 const title = "Food Express";
 const {user} = useContext(AppContext);
+console.log("layout");
+console.log(user);
+
   return (
     <div>
       <Head>
